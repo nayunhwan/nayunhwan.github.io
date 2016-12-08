@@ -9,7 +9,7 @@ relative_permalinks: false
 # Setup
 title:            Yun Hwan Na
 tagline:          'A Jekyll theme'
-description:      'A brazen two-column <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that pairs a prominent sidebar with uncomplicated content. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.'
+description:      '디발자 혹은 개자이너'
 url:              http://hyde.getpoole.com
 baseurl:          /
 
