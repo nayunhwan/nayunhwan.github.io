@@ -14,3 +14,14 @@ Jekyll을 이용하는 것은 쉽지 않았다. 지금까지 기업에서 운영
 처음에 사용하기 어려운 대신, 엄청난 확장성의 자유도와 무료라는 강력한 장점을 가지고 있다.
 
 이제 이 Tech 블로그를 어떻게 시작하냐가 큰 관건이다.
+
+
+
+> Markdown 문법은 어떻게 써야할까?
+
+{% highlight c++ %}
+  #include <stdio.h>
+  int main(){
+    return 0;
+  }
+{% endhighlight %}

@@ -84,6 +84,10 @@ h1 {
     box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.1);
 }
 
+#main_nav a:hover{
+  text-decoration: none;
+}
+
 #nav_left {
     margin-top: 12px;
 }
@@ -222,6 +226,11 @@ h1 {
     text-overflow: ellipsis;
     white-space: nowrap;
     word-wrap: normal;
+}
+
+.post_url:hover{
+  text-decoration: none;
+
 }
 
 footer {
