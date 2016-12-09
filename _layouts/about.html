@@ -75,7 +75,7 @@
         success: function (data) {
 
 
-            for (var i = 0; i < 6; i++) {
+            for (var i = 0; i < data.length; i++) {
 
                 var language = data[i].language;
                 var li = $('<li/>').addClass('repo');
@@ -85,15 +85,20 @@
                     li.append('<h1><i class="icon-java"></i></h1>');
                 } else if (language == 'C++') {
                     li.append('<h1><i class="icon-c_plus_lang"></i></h1>');
-                } else if (language == 'JavaScript') {
+                } else if (language == 'C'){
+                    li.append('<h1><i class="icon-c_lang"></i></h1>');
+                }else if (language == 'JavaScript') {
                     li.append('<h1><i class="xi-javascript"></i></h1>');
                 } else if (language == 'CSS') {
                     li.append('<h1><i class="xi-css3"></i></h1>');
                 } else if (language == "HTML") {
                     li.append('<h1><i class="xi-html5"></i></h1>');
                 } else if (language == "Python") {
-                    li.append('<h1><i class="xi-python></i></h1>');
+                    li.append('<h1><i class="xi-python"></i></h1>');
+                } else if (language == null){
+                    li.append('<h1><i class="xi-file"></i></h1>');
                 }
+
                 li.append(data[i].name);
                 li.append($('<p/>').addClass('ubuntu_font').text(data[i].description));
                 li.append($('<span/>').addClass('ubuntu_font date').text('Updated ' + data[i].pushed_at.slice(0, 10)));
@@ -115,7 +120,7 @@
 
             $('#count_history').text(data.length);
 
-            for (var i = 0; i < data.length; i++) {
+            for (var i = 0; i < 5; i++) {
                 var element = $('<p/>').addClass('ubuntu_font').addClass('history');
                 var type = data[i].type;
                 var name = data[i].actor.login;
@@ -166,7 +171,7 @@
                     var ref = data[i].payload.ref.split('/')[2];
 
                     element.prepend($('<h1/>').append($('<i/>').addClass('xi-log')));
-                    element.append(' pushed to ' + ref);
+                    element.append( ' pushed to ' + ref);
                 }
 
                 var anchor_repo = $('<a/>').attr('href', repo_url).text(repo_name);
@@ -223,7 +228,6 @@
         </div>
     </div>
 
-    <br>
     <div id="dev">
         <h1>Development & Design</h1>
         <p>개발과 디자인이 공존하는 시대를 꿈꿉니다.</p>
@@ -235,11 +239,11 @@
 
     <div style="text-align:center; padding: 0px 10%;">
         <h2><i class="xi-github"></i> Github</h2>
-        <!-- <div id="github">
+        <div id="github">
             <p class="ubuntu_font">I have <span id="count_repos"></span> public repositories</p>
             <br>
             <div id="repos_list">
-                Repos
+                <!-- Repos -->
             </div>
             <br>
             <h2><i class="xi-github"></i> Histroy</h2>
@@ -247,9 +251,9 @@
             <br>
             <div id="github_timeline">
 
-                Timeline of github
+                <!-- Timeline of github -->
             </div>
-        </div> -->
+        </div>
         <br>
         <h2><i class="xi-instagram"></i> Photo</h2>
         <p class="ubuntu_font">from my Instagram</p>

@@ -204,7 +204,8 @@ h1 {
 .repo {
     display: inline-block;
     width: 200px;
-    padding: 10px 30px;
+    height: 200px;
+    padding: 30px 30px;
     border: 1px solid #aaa;
     border-radius: 3px;
     margin: 10px;
@@ -265,6 +266,10 @@ footer {
 #github_timeline {
     padding: 0px 20%;
     text-align: left;
+}
+
+#github_timeline hr{
+  margin: 0px;
 }
 
 #github_timeline a {
