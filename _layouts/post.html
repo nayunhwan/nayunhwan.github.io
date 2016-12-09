@@ -34,5 +34,5 @@ layout: default
     {% endfor %}
   </ul>
 </div>
-<h1>{{ page.url }}</h1>
-<div class="fb-comments" data-href="{{ page.url }}" data-numposts="5"></div>
+<h1>{{ site.baseurl | replace: '//', '/' }}{{ page.url }}</h1>
+<div class="fb-comments" data-href="{{ site.baseurl | replace: '//', '/' }}{{ page.url }}" data-numposts="5"></div>
