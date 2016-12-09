@@ -13,9 +13,9 @@ title: Home
       </a>
     </h1>
 
-    <span class="post-date">{{ post.date | date_to_string }}</span>
-
-<!--    {{ post.content }}-->
+    <span class="post-date">{{ post.date | date_to_string }} | <a href="{{ site.author.url}}">{{ site.author.name }}</a></span>
+    <h3 style="color: #888;">{{ post.summary }}</h3>
+   <!-- {{ post.content }} -->
   </div>
   {% endfor %}
 </div>
