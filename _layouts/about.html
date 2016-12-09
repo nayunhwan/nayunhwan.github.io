@@ -1,279 +1,276 @@
 <!DOCTYPE html>
 <html lang="en-us">
 
-  {% include head.html %}
+{% include head.html %}
 
-    
-    <script type="text/javascript">
-            var feed = new Instafeed({
-                get: 'user',  
-                userId: '1432711798',
-                sortBy: 'most-recent',
-                clientId: '53c02a1dc0bc44e5988661ba83d0f730',
-                accessToken: '1432711798.53c02a1.4830ee1cba954066bd7819ddbb78d99d',
-                limit: '24',
-                template: '<a class="insta" href="{{link}}"><img src="{{image}}" /><br><div class="insta_text ubuntu_font"><i class="xi-heart" style="color:#e74c3c;"></i> <strong>{{likes}}</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="xi-message"></i> <strong>{{comments}}</strong> </div></a>'
-            });
-            feed.run();
-        </script>
-    <script>
-            
-            
-            var d = new Date();
-            var month = '0';
-            if(d.getMonth()+1 < 10){
-                month += (d.getMonth()+1);
-            }
-            else{
-                month = (d.getMonth()+1);
-            }
-            var cur_date = d.getFullYear()+'-'+month+'-'+d.getDate();
-            
-            
-            
-            var url = 'https://api.instagram.com/v1/users/self/?access_token=1432711798.b132a67.9e91d6b4eaaa48caba61665bf29efc64'
-            var github_url = 'https://api.github.com/users/nayunhwan'
-            var follow = 0;
-            
-            function fill_follow(media, follows, followed_by){
-                $('#media > span').text(media);
-                $('#follower > span').text(follows);
-                $('#following > span').text(followed_by);
-            }
-            
-            $.ajax({
-                url: url,
-                type: 'GET',
-                crossDomain: true,
-                dataType: 'jsonp',
-                success: function(data) { 
-                    var media = data.data.counts.media;
-                    var follows = data.data.counts.followed_by;
-                    var followed_by = data.data.counts.follows;
-                    
-                    
-                    fill_follow(media, follows, followed_by);
-                    $('#profile_photo').attr('src', data.data.profile_picture);
-                    
-                },
-                error: function(data) { alert('Failed!'); }
-            });
-            
-            
-            $.ajax({
-                url: github_url,
-                type: 'GET',
-                crossDomain: true,
-                success: function(data){
-                    $('#count_repos').html(data.public_repos);
-                }
-            });
-            
-            $.ajax({
-                url: github_url+'/repos',
-                type: 'GET',
-                crossDomain: true,
-                success: function(data){
 
-                    
-                    for(var i = 0; i < 6; i++){
-                        
-                        var language = data[i].language;
-                        var li = $('<li/>').addClass('repo');
-                        var anchor = $('<a/>').attr('href', data[i].html_url);
-                        
-                        if(language == 'Java'){
-                            li.append('<h1><i class="icon-java"></i></h1>');
-                        }
-                        else if(language == 'C++'){
-                            li.append('<h1><i class="icon-c_plus_lang"></i></h1>');
-                        }
-                        else if(language == 'JavaScript'){
-                            li.append('<h1><i class="xi-javascript"></i></h1>');
-                        }
-                        else if(language == 'CSS'){
-                            li.append('<h1><i class="xi-css3"></i></h1>');
-                        }
-                        else if(language == "HTML"){
-                            li.append('<h1><i class="xi-html5"></i></h1>');
-                        }
-                        else if(language == "Python"){
-                            li.append('<h1><i class="xi-python></i></h1>');
-                        }
-                        li.append(data[i].name);
-                        li.append($('<p/>').addClass('ubuntu_font').text(data[i].description));
-                        li.append($('<span/>').addClass('ubuntu_font date').text('Updated '+data[i].pushed_at.slice(0,10)));
-                        
-                        anchor.append(li);
-                        
-//                        $('#repos_list').append('<li class="repo">'+data[i].name+'<br>'+data[i].language+'</li>');
-                        $('#repos_list').append(anchor);
-                        
-                    }
+<script type="text/javascript">
+    var feed = new Instafeed({
+        get: 'user',
+        userId: '1432711798',
+        sortBy: 'most-recent',
+        clientId: '53c02a1dc0bc44e5988661ba83d0f730',
+        accessToken: '1432711798.53c02a1.4830ee1cba954066bd7819ddbb78d99d',
+        limit: '24',
+        template: '<a class="insta" href="{{link}}"><img src="{{image}}" /><br><div class="insta_text ubuntu_font"><i class="xi-heart" style="color:#e74c3c;"></i> <strong>{{likes}}</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="xi-message"></i> <strong>{{comments}}</strong> </div></a>'
+    });
+    feed.run();
+</script>
+<script>
+    var d = new Date();
+    var month = '0';
+    if (d.getMonth() + 1 < 10) {
+        month += (d.getMonth() + 1);
+    } else {
+        month = (d.getMonth() + 1);
+    }
+    var cur_date = d.getFullYear() + '-' + month + '-' + d.getDate();
+
+
+
+    var url = 'https://api.instagram.com/v1/users/self/?access_token=1432711798.b132a67.9e91d6b4eaaa48caba61665bf29efc64'
+    var github_url = 'https://api.github.com/users/nayunhwan'
+    var follow = 0;
+
+    function fill_follow(media, follows, followed_by) {
+        $('#media > span').text(media);
+        $('#follower > span').text(follows);
+        $('#following > span').text(followed_by);
+    }
+
+    $.ajax({
+        url: url,
+        type: 'GET',
+        crossDomain: true,
+        dataType: 'jsonp',
+        success: function (data) {
+            var media = data.data.counts.media;
+            var follows = data.data.counts.followed_by;
+            var followed_by = data.data.counts.follows;
+
+
+            fill_follow(media, follows, followed_by);
+            $('#profile_photo').attr('src', data.data.profile_picture);
+
+        },
+        error: function (data) {
+            alert('Failed!');
+        }
+    });
+
+
+    $.ajax({
+        url: github_url,
+        type: 'GET',
+        crossDomain: true,
+        success: function (data) {
+            $('#count_repos').html(data.public_repos);
+        }
+    });
+
+    $.ajax({
+        url: github_url + '/repos',
+        type: 'GET',
+        crossDomain: true,
+        success: function (data) {
+
+
+            for (var i = 0; i < 6; i++) {
+
+                var language = data[i].language;
+                var li = $('<li/>').addClass('repo');
+                var anchor = $('<a/>').attr('href', data[i].html_url);
+
+                if (language == 'Java') {
+                    li.append('<h1><i class="icon-java"></i></h1>');
+                } else if (language == 'C++') {
+                    li.append('<h1><i class="icon-c_plus_lang"></i></h1>');
+                } else if (language == 'JavaScript') {
+                    li.append('<h1><i class="xi-javascript"></i></h1>');
+                } else if (language == 'CSS') {
+                    li.append('<h1><i class="xi-css3"></i></h1>');
+                } else if (language == "HTML") {
+                    li.append('<h1><i class="xi-html5"></i></h1>');
+                } else if (language == "Python") {
+                    li.append('<h1><i class="xi-python></i></h1>');
                 }
-            });
-            
-            $.ajax({
-                url: github_url+'/events',
-                type: 'GET',
-                crossDomain: true,
-                success: function(data){
-                    
-                    $('#count_history').text(data.length);
-                    
-                    for(var i = 0; i < data.length; i++){
-                        var element = $('<p/>').addClass('ubuntu_font').addClass('history');
-                        var type = data[i].type;
-                        var name = data[i].actor.login;
-                        var repo_name = data[i].repo.name;
-                        var repo_url = 'https://github.com/'+repo_name;
-                        var time = data[i].created_at.slice(0,10);
-                        var avatar = data[i].actor.avatar_url;
-                        
-                        
-                        // get time
-                        
-                        var date_array = time.split('-');
-                        var date_obj = new Date(date_array[0],date_array[1]-1,date_array[2]);
-                        var between_day = Math.floor((d.getTime() - date_obj.getTime()) / 1000 / 60 / 60 / 24);
-                        
-                        
-                        
-                        if(between_day == 0){
-                            time = 'Today';
-                        }
-                        else if(between_day < 7){
-                            time = between_day + ' days ago';
-                        }
-                        
-                        
-                        
-                        var anchor_name = $('<a/>').attr('href', 'https://github.com/'+name).text(name);
-                        var avatar_img = $('<img/>').attr({'src': avatar, 'width': '30px'}).addClass('img_circle');
-                        
-                        
-                        element.append(anchor_name);
-                        
-                        if(type == 'CreateEvent'){
-                            
-                            var ref_type = data[i].payload.ref_type;
-                            element.append(' created ');
-                            
-                            if(ref_type == 'repository'){
-                                element.prepend($('<h1/>').append($('<i/>').addClass('xi-book')));
-                                element.append('repository');
-                            }
-                            else if(ref_type == 'branch'){
-                                element.prepend($('<h1/>').append($('<i/>').addClass('xi-branch')));
-                                element.append('branch ' + data[i].payload.master_branch);
-                            }
-                        }
-                        else if(type == 'PushEvent'){
-                            var ref = data[i].payload.ref.split('/')[2];
-                            
-                            element.prepend($('<h1/>').append($('<i/>').addClass('xi-log')));
-                            element.append(' pushed to ' + ref);
-                        }
-                        
-                        var anchor_repo = $('<a/>').attr('href', repo_url).text(repo_name);
-                        
-                        element.append(' at '); 
-                        element.append(anchor_repo);
-                        
-                        var span_time = $('<span/>').addClass('span_time').text(time).append('<br>');
-                        element.prepend(span_time);
-                        element.prepend(avatar_img);
-                        $('#github_timeline').append('<hr>');
-                        $('#github_timeline').append(element);
-                    }
-                    $('#github_timeline').append('<hr>');
+                li.append(data[i].name);
+                li.append($('<p/>').addClass('ubuntu_font').text(data[i].description));
+                li.append($('<span/>').addClass('ubuntu_font date').text('Updated ' + data[i].pushed_at.slice(0, 10)));
+
+                anchor.append(li);
+
+                //                        $('#repos_list').append('<li class="repo">'+data[i].name+'<br>'+data[i].language+'</li>');
+                $('#repos_list').append(anchor);
+
+            }
+        }
+    });
+
+    $.ajax({
+        url: github_url + '/events',
+        type: 'GET',
+        crossDomain: true,
+        success: function (data) {
+
+            $('#count_history').text(data.length);
+
+            for (var i = 0; i < data.length; i++) {
+                var element = $('<p/>').addClass('ubuntu_font').addClass('history');
+                var type = data[i].type;
+                var name = data[i].actor.login;
+                var repo_name = data[i].repo.name;
+                var repo_url = 'https://github.com/' + repo_name;
+                var time = data[i].created_at.slice(0, 10);
+                var avatar = data[i].actor.avatar_url;
+
+
+                // get time
+
+                var date_array = time.split('-');
+                var date_obj = new Date(date_array[0], date_array[1] - 1, date_array[2]);
+                var between_day = Math.floor((d.getTime() - date_obj.getTime()) / 1000 / 60 / 60 / 24);
+
+
+
+                if (between_day == 0) {
+                    time = 'Today';
+                } else if (between_day < 7) {
+                    time = between_day + ' days ago';
                 }
-            })
-            
-        </script>
-  <body>
+
+
+
+                var anchor_name = $('<a/>').attr('href', 'https://github.com/' + name).text(name);
+                var avatar_img = $('<img/>').attr({
+                    'src': avatar,
+                    'width': '30px'
+                }).addClass('img_circle');
+
+
+                element.append(anchor_name);
+
+                if (type == 'CreateEvent') {
+
+                    var ref_type = data[i].payload.ref_type;
+                    element.append(' created ');
+
+                    if (ref_type == 'repository') {
+                        element.prepend($('<h1/>').append($('<i/>').addClass('xi-book')));
+                        element.append('repository');
+                    } else if (ref_type == 'branch') {
+                        element.prepend($('<h1/>').append($('<i/>').addClass('xi-branch')));
+                        element.append('branch ' + data[i].payload.master_branch);
+                    }
+                } else if (type == 'PushEvent') {
+                    var ref = data[i].payload.ref.split('/')[2];
+
+                    element.prepend($('<h1/>').append($('<i/>').addClass('xi-log')));
+                    element.append(' pushed to ' + ref);
+                }
+
+                var anchor_repo = $('<a/>').attr('href', repo_url).text(repo_name);
+
+                element.append(' at ');
+                element.append(anchor_repo);
+
+                var span_time = $('<span/>').addClass('span_time').text(time).append('<br>');
+                element.prepend(span_time);
+                element.prepend(avatar_img);
+                $('#github_timeline').append('<hr>');
+                $('#github_timeline').append(element);
+            }
+            $('#github_timeline').append('<hr>');
+        }
+    })
+</script>
+
+<body>
 
     {% include sidebar.html %}
 
     <div id="context">
-            
-           
-            
+
+
+
+        <br>
+        <div id="main_lang">
+
+            <h1><i class="icon-c_lang"></i></h1>
+            <h1><i class="icon-java"></i></h1>
+            <h1><i class="xi-python"></i></h1>
+            <h1><i class="xi-html5"></i></h1>
+            <h1><i class="xi-css3"></i></h1>
+            <h1><i class="xi-javascript"></i></h1>
+            <h1><i class="xi-android"></i></h1>
             <br>
-            <div id="main_lang">
+            <h1><i class="xi-photoshop"></i></h1>
+            <h1><i class="xi-illustrator"></i></h1>
+            <h1><i class="xi-office"></i></h1>
 
-                <h1><i class="icon-c_lang"></i></h1>
-                <h1><i class="icon-java"></i></h1>
-                <h1><i class="xi-python"></i></h1>
-                <h1><i class="xi-html5"></i></h1>
-                <h1><i class="xi-css3"></i></h1>
-                <h1><i class="xi-javascript"></i></h1>
-                <h1><i class="xi-android"></i></h1>
-                <br>
-                <h1><i class="xi-photoshop"></i></h1>
-                <h1><i class="xi-illustrator"></i></h1>
-                <h1><i class="xi-office"></i></h1>
+        </div>
+        <br>
+        <div id="company">
 
+            <img src="/public/img/google_logo.png">
+            <img src="/public/img/gdg_logo.png">
+            <img src="/public/img/samsung_logo.png">
+            <img src="/public/img/ssm_logo.png">
+            <img src="/public/img/ms_logo.png">
+            <img src="/public/img/msp_logo.png">
+            <img src="/public/img/exit_logo.png">
+
+        </div>
+    </div>
+
+
+    <div id="dev">
+        <h1>Development & Design</h1>
+        <p>This double D is important in program</p>
+    </div>
+
+    <br>
+    <br>
+
+
+    <div style="text-align:center; padding: 0px 10%;">
+        <h2><i class="xi-github"></i> Github</h2>
+        <div id="github">
+            <p class="ubuntu_font">I have <span id="count_repos"></span> public repositories</p>
+            <br>
+            <div id="repos_list">
+                <!--Repos-->
             </div>
             <br>
-            <div id="company">
+            <h2><i class="xi-github"></i> Histroy</h2>
+            <p class="ubuntu_font">I have <span id="count_history"></span> lastest historys</p>
+            <br>
+            <div id="github_timeline">
 
-                <img src="/public/img/google_logo.png">
-                <img src="/public/img/gdg_logo.png">
-                <img src="/public/img/samsung_logo.png">
-                <img src="/public/img/ssm_logo.png">
-                <img src="/public/img/ms_logo.png">
-                <img src="/public/img/msp_logo.png">
-                <img src="/public/img/exit_logo.png">
-
+                <!--Timeline of github-->
             </div>
         </div>
-            
-        
-        <div id="dev">
-            <h1>Development & Design</h1>
-            <p>This double D is important in program</p>
-        </div>
-        
         <br>
+        <h2><i class="xi-instagram"></i> Photo</h2>
+        <p class="ubuntu_font">from my Instagram</p>
         <br>
-        
-        
-        <div style="text-align:center; padding: 0px 10%;">
-            <h2><i class="xi-github"></i> Github</h2>
-                <div id="github">
-                    <p class="ubuntu_font">I have <span id="count_repos"></span> public repositories</p>
-                    <br>
-                    <div id="repos_list">
-                        <!--Repos-->
-                    </div>
-                    <br>
-                    <h2><i class="xi-github"></i> Histroy</h2>
-                    <p class="ubuntu_font">I have <span id="count_history"></span> lastest historys</p>
-                    <br>
-                    <div id="github_timeline">
-                        
-                        <!--Timeline of github-->
-                    </div>
-                </div>
-            <br>
-            <h2><i class="xi-instagram"></i> Photo</h2>
-            <p class="ubuntu_font">from my Instagram</p>
-            <br>
-        </div>
-        <div style="text-align:center; ">
-            <div id="instafeed"></div>
-            <br>
-            
-            <a href="http://instagram.com/nayunhwan" target="_blank"><div class="btn">
+    </div>
+    <div style="text-align:center; ">
+        <div id="instafeed"></div>
+        <br>
+
+        <a href="http://instagram.com/nayunhwan" target="_blank">
+            <div class="btn">
                 <p>More</p>
-            </div></a>
-            
-            <br>
-            <br>
-        </div>
-      
-      {% include footer.html %}
-      
-  </body>
+            </div>
+        </a>
+
+        <br>
+        <br>
+    </div>
+
+    {% include footer.html %}
+
+</body>
+
 </html>
