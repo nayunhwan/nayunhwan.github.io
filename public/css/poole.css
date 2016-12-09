@@ -234,6 +234,10 @@ img {
   border-radius: 5px;
 }
 
+.profile_img{
+    border-radius: 100%;
+}
+
 /* Tables */
 table {
   margin-bottom: 1rem;

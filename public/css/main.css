@@ -1,0 +1,323 @@
+
+
+
+
+@import url(https://cdn.rawgit.com/theeluwin/NotoSansKR-Hestia/master/stylesheets/NotoSansKR-Hestia.css);
+
+/*
+*{
+    margin: 0 auto;
+    font-family: 'Doppio One', sans-serif;
+    font-family: 'NotoSansKR-Hestia';
+    font-weight: 400;
+    color: #333;
+}
+*/
+
+
+*{
+    margin: 0 auto;
+    font-family: "PT Sans", Helvetica, Arial, sans-serif;
+}
+
+html {
+  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+}
+
+@media (min-width: 48em) {
+  html {
+    font-size: 16px;
+  }
+}
+@media (min-width: 58em) {
+  html {
+    font-size: 20px;
+  }
+}
+
+body{
+    background: #F9FAFB;
+}
+a{
+    text-decoration: none;
+}
+h1, h2, h3 ,h4, h5, h6{
+    font-family: 'NotoSansKR-Hestia';
+}
+h1{
+    font-family: 'NotoSansKR-Hestia';
+}
+#logo{
+    margin-right: 30px;
+}
+#main_bg{
+    text-align: center;
+    
+    background-image: url(../img/city_blur.jpg);
+    background-position: 0px;
+    background-size: cover;
+    
+    padding: 10px 0px;
+    padding-top: 150px;
+}
+
+#main_bg > h1{
+    color: rgba(255,255,255,0.7);
+}
+#main_bg > p{
+    color: rgba(255,255,255,0.7);
+}
+#main_nav{
+    top: 0px;
+    position: fixed;
+    width: 100%;
+    padding: 15px 30px;
+    background: rgba(255,255,255,0.9);
+    box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.1);
+}
+
+#nav_left{
+    margin-top: 12px;    
+}
+
+#nav_left h3{
+    display: inline;
+    margin-left: 30px;
+    color: lightgray;
+}
+
+#nav_left h3:hover{
+    transition: 0.3s;
+    color: #314669;
+}
+
+#nav_right{
+    margin-top: 8px;
+    margin-right: 60px;
+    /*padding-right: 30px;*/
+}
+#nav_right > h2{
+    display: inline;
+}
+#nav_right > h2 > a > i{
+    transition: 0.3s;
+}
+#nav_right > h2 > a > i:hover{
+    transition: 0.3s;
+    color: #aaa;
+}
+
+#profile{
+    margin: 10px;
+    text-align: center;
+    display: inline-block;
+    padding-top:10px;
+}
+#profile > p{
+    padding-top:10px;
+    padding-left:20px;
+}
+#info h3{
+    color: white;
+}
+#info span{
+    color: white;
+}
+#context{
+/*    text-align: center;*/
+    margin: 30px;
+}
+#profile{
+    text-align: left;
+}
+#main_lang{
+    text-align: center;
+}
+#main_lang > h1{
+    display: inline;
+    margin: 10px;
+    
+}
+
+#main_lang > h1 > i{
+    color: #8E9CB1;
+}
+
+#company{
+    text-align: center;
+}
+
+#company > img{
+    display: inline-block;
+    height: 40px;
+    margin: 20px; 
+}
+
+#repos_list{
+    text-decoration: none;
+    list-style: none;
+}
+#dev{
+/*    background-image: url(img/developer.jpeg);*/
+    background: #061524;
+    background-size: cover;
+    text-align: center;
+    padding: 50px;
+}
+#dev h1{
+    color: white;
+    font-weight: 400;
+}
+#dev p{
+    color: rgba(255,255,255,0.7);
+}
+.repo{
+    display: inline-block;
+    width: 200px;
+    padding: 10px 30px;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    margin: 10px;
+    background: #ffffff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+}
+.repo:hover{
+    transition: 0.1s;
+    border-color: #368AFF;
+}
+.repo > p{
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+}
+
+footer{
+    padding: 10px 100px;
+    background: #eee;
+    color: #aaa;
+}
+#footer_left{
+    float: left;
+    font-size: 18px;
+}
+#footer_left > a > i{
+    transition: 0.3s;
+    color: #aaa;
+}
+#footer_left > a > i:hover{
+    transition: 0.3s;
+    color: #ccc;
+}
+#footer_right{
+    color: #aaa;
+}
+#instafeed{
+    width: 70%;
+}
+#github_timeline{
+    padding: 0px 20%;
+    text-align: left;
+}
+#github_timeline  a{
+    text-decoration: none;
+    color: #4078c0;
+}
+#github_timeline h1{
+    display: inline;
+    margin: 10px;
+}
+.clear{
+    clear:both;
+}
+.left{
+    float: left;
+}
+.right{
+    float : right;
+}
+.btn{
+    margin: 20px;
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    border: 2px solid #aaa;
+    border-radius: 100%;
+}
+.btn > p{
+    color: #aaa;
+    font-size: 12px;
+}
+.btn:hover{
+    transition: 0.3s;
+    border-color: #368AFF
+}
+.btn > p:hover {
+    transition: 0.3s;
+    color: #368AFF
+}
+.ubuntu_font{
+    font-family: 'Ubuntu', sans-serif;
+}
+.insta{
+    transition: 0.1s;
+    margin: 5px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 0px 3px 3px 0px;
+    background: #f8f8f8;
+}
+.insta:hover{
+    transition: 0.1s;
+    border-color: #368AFF;
+    
+}
+.insta_text{
+    width: 120px;
+    padding: 0 15px;
+    font-size: 14px;
+    color: #333;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+}
+.circle{
+    width: 100px;
+    height: 70px;
+    display: inline-block;
+    margin: 5px 50px;
+/*    border: 1px solid #333;*/
+/*    border-radius: 100%;*/
+}
+.circle > h3{
+    margin-bottom: 5px;
+}
+.date{
+    display: block;
+    text-align: right;
+    margin-top: 7px;
+    font-size: 4px;   
+}
+.history{
+    font-size: 12px;
+    padding: 10px 30px;
+}
+.img_circle{
+    text-align: left;
+    display: inline;
+    border-radius: 100%;
+    margin: 10px;
+    margin-bottom: 0px;
+}
+.span_time{
+    color: #888;
+    font-size: 16px;
+    padding-bottom: 10px;
+}
