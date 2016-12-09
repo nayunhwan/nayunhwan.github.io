@@ -41,27 +41,27 @@
 
 <script>
     var insta_url = 'https://api.instagram.com/v1/users/self/?access_token=1432711798.b132a67.9e91d6b4eaaa48caba61665bf29efc64';
-    
+
     function fill_follow(media, follows, followed_by){
                 $('#media > span').text(media);
                 $('#follower > span').text(follows);
                 $('#following > span').text(followed_by);
             }
-    
+
     $.ajax({
                 url: insta_url,
                 type: 'GET',
                 crossDomain: true,
                 dataType: 'jsonp',
-                success: function(data) { 
+                success: function(data) {
                     var media = data.data.counts.media;
                     var follows = data.data.counts.followed_by;
                     var followed_by = data.data.counts.follows;
-                    
-                    
+
+
                     fill_follow(media, follows, followed_by);
                     $('#profile_photo').attr('src', data.data.profile_picture);
-                    
+
                 },
                 error: function(data) { alert('Failed!'); }
             });
@@ -106,10 +106,10 @@
         디발자 혹은 개자이너
     </p>
     <br>
-    <br>
     <div id="info">
         <div id="media" class="circle"><h3>Media</h3><span>number</span></div>
         <div id="follower" class="circle"><h3>Follower</h3><span>number</span></div>
         <div id="following" class="circle"><h3>Following</h3><span>number</span></div>
     </div>
+    <br>
 </div>

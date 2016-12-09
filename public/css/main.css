@@ -297,26 +297,27 @@ footer {
 .btn {
     margin: 20px;
     display: inline-block;
-    width: 70px;
-    height: 70px;
-    line-height: 70px;
-    border: 2px solid #aaa;
+    width: 120px;
+    height: 120px;
+    line-height: 120px;
+    border: 4px solid #aaa;
     border-radius: 100%;
 }
 
 .btn > p {
     color: #aaa;
-    font-size: 12px;
+    font-size: 18px;
 }
 
 .btn:hover {
+    text-decoration: none;
     transition: 0.3s;
-    border-color: #368AFF
+    border-color: #314669
 }
 
 .btn > p:hover {
     transition: 0.3s;
-    color: #368AFF
+    color: #314669
 }
 
 .ubuntu_font {
@@ -324,7 +325,11 @@ footer {
 }
 
 .insta {
+    /*width: auto;*/
     transition: 0.1s;
+    padding: 10px;
+    padding-bottom: 0px;
+    /*padding: 10px;*/
     margin: 5px;
     display: inline-block;
     border: 1px solid #ccc;
@@ -336,9 +341,12 @@ footer {
     transition: 0.1s;
     border-color: #368AFF;
 }
+.insta > img{
+  margin: 0;
+}
 
 .insta_text {
-    width: 120px;
+    width: 100%;
     padding: 0 15px;
     font-size: 14px;
     color: #333;

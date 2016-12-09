@@ -4,18 +4,7 @@
 {% include head.html %}
 
 
-<script type="text/javascript">
-    var feed = new Instafeed({
-        get: 'user',
-        userId: '1432711798',
-        sortBy: 'most-recent',
-        clientId: '53c02a1dc0bc44e5988661ba83d0f730',
-        accessToken: '1432711798.53c02a1.4830ee1cba954066bd7819ddbb78d99d',
-        limit: '24',
-        template: '<a class="insta" href="{{link}}"><img src="{{image}}" /><br><div class="insta_text ubuntu_font"><i class="xi-heart" style="color:#e74c3c;"></i> <strong>{{likes}}</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="xi-message"></i> <strong>{{comments}}</strong> </div></a>'
-    });
-    feed.run();
-</script>
+
 <script>
     var d = new Date();
     var month = '0';
@@ -192,12 +181,25 @@
 
 <body>
 
+
+  <script type="text/javascript">
+      var feed = new Instafeed({
+          get: 'user',
+          userId: '1432711798',
+          sortBy: 'most-recent',
+          clientId: '53c02a1dc0bc44e5988661ba83d0f730',
+          accessToken: '1432711798.53c02a1.4830ee1cba954066bd7819ddbb78d99d',
+          limit: '12',
+          {% raw %}
+          template: '<a class="insta" href="{{link}}"><img src="{{image}}" /><br><div class="insta_text ubuntu_font"><i class="xi-heart" style="color:#e74c3c;"></i> <strong>{{likes}}</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="xi-message"></i> <strong>{{comments}}</strong> </div></a>'
+          {% endraw %}
+      });
+      feed.run();
+  </script>
+
     {% include sidebar.html %}
 
     <div id="context">
-
-
-
         <br>
         <div id="main_lang">
 
@@ -216,18 +218,17 @@
         </div>
         <br>
         <div id="company">
-
+            <img src="/public/img/exit_logo.png">
             <img src="/public/img/google_logo.png">
             <img src="/public/img/gdg_logo.png">
             <img src="/public/img/samsung_logo.png">
             <img src="/public/img/ssm_logo.png">
             <img src="/public/img/ms_logo.png">
             <img src="/public/img/msp_logo.png">
-            <img src="/public/img/exit_logo.png">
-
         </div>
     </div>
 
+    <br>
     <div id="dev">
         <h1>Development & Design</h1>
         <p>개발과 디자인이 공존하는 시대를 꿈꿉니다.</p>
@@ -255,18 +256,23 @@
             </div>
         </div>
         <br>
+        <a class="btn" href="http://instagram.com/nayunhwan" target="_blank">
+                <p><b>Github</b></p>
+        </a>
+        <br>
+        <br>
         <h2><i class="xi-instagram"></i> Photo</h2>
         <p class="ubuntu_font">from my Instagram</p>
         <br>
     </div>
     <div style="text-align:center; ">
+
         <div id="instafeed"></div>
+
         <br>
 
-        <a href="http://instagram.com/nayunhwan" target="_blank">
-            <div class="btn">
-                <p>More</p>
-            </div>
+        <a class="btn" href="http://instagram.com/nayunhwan" target="_blank">
+                <p><b>More</b></p>
         </a>
 
         <br>
