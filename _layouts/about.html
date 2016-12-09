@@ -5,6 +5,7 @@
 
 
 
+
 <script>
     var d = new Date();
     var month = '0';
@@ -26,6 +27,7 @@
         $('#follower > span').text(follows);
         $('#following > span').text(followed_by);
     }
+
 
     $.ajax({
         url: url,
@@ -229,7 +231,7 @@
     </div>
 
     <br>
-    <div id="dev">
+    <div class="banner">
         <h1>Development & Design</h1>
         <p>개발과 디자인이 공존하는 시대를 꿈꿉니다.</p>
     </div>

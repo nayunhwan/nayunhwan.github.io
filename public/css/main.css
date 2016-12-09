@@ -9,10 +9,12 @@ html {
     font-family: "PT Sans", Helvetica, Arial, sans-serif;
 }
 
+
 @media (min-width: 48em) {
     html {
         font-size: 16px;
     }
+
 }
 
 @media (min-width: 58em) {
@@ -42,10 +44,19 @@ h1 {
     font-family: 'NotoSansKR-Hestia';
 }
 
-#logo {
-    padding-top: 3px;
-    margin-right: 30px;
+img{
+  margin: 0px;
 }
+
+#logo {
+    width: 120px;
+    /*padding-top: 3px;*/
+    margin: 0px;
+    margin-right: 30px;
+
+}
+
+
 
 #main_bg {
     text-align: center;
@@ -69,7 +80,7 @@ h1 {
     position: fixed;
     width: 100%;
     padding: 15px 30px;
-    padding-bottom: 4px;
+    /*padding-bottom: 4px;*/
     background: rgba(255, 255, 255, 0.9);
     box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.1);
 }
@@ -78,8 +89,15 @@ h1 {
   text-decoration: none;
 }
 
+#mobile_menu_bar{
+  display: none;
+}
+#mobile_menu{
+  display: none;
+}
+
 #nav_left {
-    margin-top: 12px;
+    margin-top: 8px;
 }
 
 #nav_left h3 {
@@ -95,13 +113,12 @@ h1 {
 }
 
 #nav_right {
-    margin-top: 8px;
+    margin-top: 6px;
     margin-right: 60px;
     /*padding-right: 30px;*/
 }
 
 #nav_right > h2 {
-
     display: inline;
 }
 
@@ -114,6 +131,7 @@ h1 {
     transition: 0.3s;
     color: #aaa;
 }
+
 
 #profile {
     margin: 10px;
@@ -174,7 +192,7 @@ h1 {
     list-style: none;
 }
 
-#dev {
+.banner {
     /*    background-image: url(img/developer.jpeg);*/
     background: #061524;
     background-size: cover;
@@ -182,12 +200,13 @@ h1 {
     padding: 50px;
 }
 
-#dev h1 {
+.banner h1 {
     color: white;
     font-weight: 400;
 }
 
-#dev p {
+.banner p {
+    margin: 0px;
     color: rgba(255, 255, 255, 0.7);
 }
 
@@ -225,9 +244,13 @@ h1 {
 }
 
 footer {
-    padding: 10px 100px;
+    padding: 20px 100px;
     background: #eee;
     color: #aaa;
+}
+
+footer  p{
+  margin: 0;
 }
 
 #footer_left {
@@ -248,6 +271,51 @@ footer {
 #footer_right {
     color: #aaa;
 }
+
+@media screen and (max-width:780px) {
+    #main_nav{
+      text-align: center;
+      padding: 10px 20px;
+      /*border-bottom: 1px solid #e6e6e6;*/
+    }
+    #logo{
+      display: inline-block;
+      float: none;
+      width: 100px;
+      padding-top: 6px;
+      margin: 0px;
+      margin-right: 20px;
+    }
+    #mobile_menu_bar{
+      margin-top: 10px;
+      display: inline;
+    }
+    #mobile_menu_bar > h2{
+      margin: 0px;
+    }
+    #nav_left{
+      display: none;
+    }
+    #nav_right{
+      display: none;
+    }
+    #mobile_menu{
+      /*border-top: 1px solid rgba(100, 100, 100, 0.8);*/
+      text-align: center;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.9);
+      top: 66px;
+      position: fixed;
+      box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.1);
+    }
+    footer {
+        padding: 20px 30px;
+        background: #eee;
+        color: #aaa;
+    }
+}
+
+
 
 #instafeed {
     width: 70%;
