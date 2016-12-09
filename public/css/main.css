@@ -53,6 +53,7 @@ h1 {
 }
 
 #logo {
+    padding-top: 3px;
     margin-right: 30px;
 }
 
@@ -78,6 +79,7 @@ h1 {
     position: fixed;
     width: 100%;
     padding: 15px 30px;
+    padding-bottom: 4px;
     background: rgba(255, 255, 255, 0.9);
     box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.1);
 }
@@ -95,6 +97,7 @@ h1 {
 #nav_left h3:hover {
     transition: 0.3s;
     color: #314669;
+    text-decoration: none;
 }
 
 #nav_right {
@@ -104,10 +107,12 @@ h1 {
 }
 
 #nav_right > h2 {
+
     display: inline;
 }
 
 #nav_right > h2 > a > i {
+    color: #314669;
     transition: 0.3s;
 }
 
@@ -138,7 +143,9 @@ h1 {
 
 #context {
     /*    text-align: center;*/
-    margin: 30px;
+    /*margin: 30px;*/
+    margin-top: 50px;
+    width: 80%;
 }
 
 #profile {
