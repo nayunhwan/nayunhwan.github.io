@@ -15,7 +15,7 @@ relative_permalinks: false
 title:            Yun Hwan Na
 tagline:          'A Jekyll theme'
 description:      '디발자 혹은 개자이너'
-url:              http://hyde.getpoole.com
+url:              https://nayunhwan.github.io
 baseurl:          /
 
 author:
