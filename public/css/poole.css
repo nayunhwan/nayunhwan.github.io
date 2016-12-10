@@ -120,10 +120,17 @@ ul, ol, dl {
   margin-bottom: 1rem;
 }
 
+dl{
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #F5F5F5;
+}
+
 dt {
   font-weight: bold;
 }
 dd {
+  padding-left: 20px;
   margin-bottom: .5rem;
 }
 
@@ -170,7 +177,7 @@ pre {
   white-space: pre-wrap;
   word-break: break-all;
   word-wrap: break-word;
-  background-color: #EAEAEA;
+  background-color: #F5F5F5;
   border-radius: 5px;
 }
 pre code {
@@ -237,6 +244,11 @@ img {
 
 .profile_img{
     border-radius: 100%;
+}
+
+.center-image{
+    margin: 0 auto;
+    display: block;
 }
 
 /* Tables */
