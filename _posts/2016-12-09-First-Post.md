@@ -89,7 +89,7 @@ adder(2, 6);
   <dd>The programming language used to build advanced Web sites and applications</dd>
 </dl>
 
-> Markdown의 한계, 이미지 삽업하기
+> Markdown의 한계, 이미지 삽입하기
 
 ### Images
 
