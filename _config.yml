@@ -3,7 +3,7 @@ markdown:         kramdown
 highlighter:      rouge
 
 # Gems
-gems: [jekyll-paginate]
+gems: ['jekyll-paginate', 'jekyll-gist']
 
 future: true
 
