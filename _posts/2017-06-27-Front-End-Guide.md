@@ -1,3 +1,10 @@
+---
+layout: post
+title: Front-End 개발 잡기
+summary: Front-End에서 중요한 개념을 잡자
+category: Front-End
+---
+
 # 프론트엔드 개발 잡기
 원문 <https://github.com/grab/front-end-guide>
 
