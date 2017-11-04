@@ -7,6 +7,10 @@ gems: ['jekyll-paginate', 'jekyll-gist']
 
 future: true
 
+sass:
+  sass_dir: _sass
+  style: compressed
+  
 # Permalinks
 permalink:        pretty
 relative_permalinks: false

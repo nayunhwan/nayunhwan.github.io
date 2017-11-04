@@ -1,0 +1,25 @@
+/*
+  imports
+*/
+
+@import "styles/header";
+@import "styles/body";
+@import "typoAnimation/typo";
+
+body {
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.clear {
+
+  &::after {
+    content: ' ';
+    display: block;
+    clear: both;
+  }
+}
