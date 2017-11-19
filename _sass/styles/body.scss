@@ -10,9 +10,13 @@
     width: 100px;
     border-radius: 50%;
   }
+
   .tutorinformation {
-    display: inline-block;
-    margin: 1rem auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 2rem auto;
+    margin-top: 5rem;
 
     .profileImg {
       width: 10rem;
@@ -31,6 +35,13 @@
       display: block;
       color: grey;
       padding-left: 1rem;
+
+      ul {
+
+        li {
+          word-break: keep-all;
+        }
+      }
     }
 
     .age {
@@ -39,17 +50,17 @@
   }
 }
 
-
-
-
 @media only screen and (max-width: 768px) {
   .context {
     padding: 2rem;
 
     .subtitle {
       font-size: 1rem;
+    }
 
+    .tutorinformation {
+      display: inline-block;
+      margin-top: 2rem;
     }
   }
-
 }
